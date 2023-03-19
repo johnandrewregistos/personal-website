@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/animations.min.css" integrity="sha512-GKHaATMc7acW6/GDGVyBhKV3rST+5rMjokVip0uTikmZHhdqFWC7fGBaq6+lf+DOS5BIO8eK6NcyBYUBCHUBXA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <title>John Andrew Registos</title>
+</head>
+<body class="scroll-smooth">
+  <!-- Home Page -->
+  <section class="home py-2" id="home">
+    <div class="container mx-auto">
+      <div class="sticky">
+        <nav class="flex justify-between bg-mainPurple items-baseline py-4" id="nav">
+          <div class="flex items-center">
+            <a href="index.html">
+              <h1 class="cursor-pointer text-white text-3xl"><span class="text-yellow">J</span>andrew</h1>
+            </a>
+          </div>
+          <div class="hidden md:flex justify-between items-center lg:ml-auto">
+            <ul class="flex gap-5">
+              <li class="ml-6">
+                <a class="text-slate-200 hover:text-yellow uppercase tracking-normal" href="#about">About</a>
+              </li>
+              <li class="ml-6">
+                <a class="text-slate-200 hover:text-yellow uppercase tracking-normal" href="#work">Works</a>
+              </li>
+              <li class="ml-6">
+                <a class="text-slate-200 hover:text-yellow uppercase tracking-normal" href="#contact">Message</a>
+              </li>
+            </ul>
+          </div>
+          <div class="-mr-2 flex md:hidden">
+                <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-100 hover:text-gray-500 hover:bg-indigo-400 focus:outline-none focus:bg-indigo-400 focus:text-slate-100 transition duration-150 ease-in-out" aria-label="Main menu" aria-expanded="false" id="main-menu-button">
+                  <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                  </svg>
+                </button>
+              </div>
+
+            </nav>
+            <div class="hidden flex justify-center md:hidden bg-indigo-400 rounded-lg" id="main-menu">
+              <div class="px-2 pt-2 pb-3 space-y-1 flex flex-col justify-center items-center">
+                <a href="#about" class="block text-slate-200 hover:text-yellow uppercase tracking-normal">About</a>
+                <a href="#work" class="block text-slate-200 hover:text-yellow uppercase tracking-normal">Works</a>
+                <a href="#contact" class="block text-slate-200 hover:text-yellow uppercase tracking-normal">Message</a>
+              </div>
+            </div>
+      </div>
+
+      <div class="container w-3/12 mx-auto bg-yellow rounded-full shadow-xl">
+        <img src="img/0.png" alt="John-Andrew" class="border-4 object-cover object-center mx-auto rounded-full mt-7 shadow-xl" >
+      </div>
+      <div class="container w-full flex flex-col gap-1 items-center mx-auto">
+        <h2 class="text-xl md:text-4xl text-slate-200 object-center mx-auto">John-Andrew Registos</h2>
+        <h2 class="text-md md:text-2xl text-slate-200 object-center mx-auto">Frontend Web Developer</h2>
+        <div class="flex mt-2 gap-x-2">
+          <a href="https://www.facebook.com/relateandreview" target="_blank">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAUxJREFUSEu1lYFNwzAQRV8nYATKBMAE7QgwAXQCYALoBLQTABMAGzAC3QA2gAlAP7Ktw7V9DlJOsiIl9r3z+ftnxsQxmzg/PYBLYAGchKGa3sN4AV5bRbYAZ8A9MHd2+QHcAILtRQ2wAa5Gtk9rBPoTJcB/ksekW+DaEnKA2vLcqPwzJLDtuANuzZpz264coH4eVgDf4ZA1x0YO0PejOMECpJaHRvVPgObEWAZ16alhI+3CAh6BiwZgDahahdfKVIwFSNvHnYC8Lfky5TrVSwv4cWRpd+ABUu4egHfb38JZ5PUN6+zimoI8wBdwkGXfRVvpOWQPUGpt8ZA9mY45gxUgVe65aeui9QJ025NBjrGKXkDTKrSrmtn1AFyzi2Io3WoPkFvJkMv74Wg30fxqgJLDJtV6EtREqUtmpgs1KKPyrmgEPQDHQdqfJwf8ArJlSRlOmzLXAAAAAElFTkSuQmCC" class="w-8 h-8 rounded-full  hover:bg-slate-100 shadow-lg"/>
+          </a>
+          <a href="https://github.com/johnandrewregistos" target="_blank">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAZdJREFUSEu1lYExBVEMRe+vABWgAlSAClABKkAFqAAdUMGnAlSADuiACpgzk+zkZ7L735rZzOzs7puXe5P7kryZJrbZxPhqITiUdCBp2x5ierfnRdLDUJBDBADfSNpYkuWnpAtJj9W+PoIrSZcj5bs1ogW3iuA/4A56J+k8MmSCPUnPtuFJEmQnks5s7cPeW/ZG/3vbc2xrR1GuTICe67bx2gj4XZX0nSSLazFrMDZ9byTgUOcBhOiIvsWyrKeW2UKZkqqnCei+JMqwxSjhtyq4mAFgu0FrnMZY9KdPdnCOBGi8YoivkjjwMRYJOuxI8BvQJiGIEZDN2pjwrcpcgS+fADGDfMi0P93ZYjQXY8Wtq8C+Mv2x86D86M7cAw5EL1B5OZCyTHGiSUiTEiUqL1u6mp5wIoDJmKrjO1onT64i/n1UAESZOUjsagfLkvr6Qv9Uw871LKdjCLUaikuHnfs7CQ1DNj7UohSZoMpy8EZDLmRg+FXOToDmnE85VlquTIjIgmyiMUq47cqbzDe2ELT0Qe+eyQn+AIklVhnz1DvpAAAAAElFTkSuQmCC" class="w-8 h-8 rounded-full  hover:bg-slate-100 shadow-lg"/>
+          </a>
+          <a href="https://www.linkedin.com/in/registosjohnandrew/" class="shadow-lg" target="_blank">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAOdJREFUSEvllWENwjAQhb8pAAk4AAeAA1AAEnCCBXAACgAHSEACKIC85Eqabg0s1y0h3K82ub5vd++6VnQcVcf69A44A1NnVdKYB420gqdTvKabAzyAg2UvgEFL8Fs3B9gDaxPdAaufA9yTFg1LVyAPriY6MQ8uth8BAsqjGyCPxskHfPRAYjM7FEY3HJI3EleVITbANtq7ALluCRimzQVQe06AWreMvIovqQug1gmgOJoHWncCaPJKsGIV/DFAIxdfNE2OTFRorQlSNOV95UHLP0MtPWtyiQcnNr7/J9Pbmnyviiub4As/E0wZX0UvUwAAAABJRU5ErkJggg==" class="w-8 h-8 hover:bg-slate-100 "/>
+          </a>
+        </div>
+        <a href="#about" class="mt-2">
+          <button class="w-36 md:w-40 text-sm md:text-xl  p-1 bg-btnColor hover:bg-indigo-400 text-slate-200 rounded-full">Know More</button>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- End of Home Page -->
+
+  <!-- About Page -->
+  <section class="container w-full  mx-auto" id="about">
+    <!-- text&image -->
+    <div class="w-full h-screen relative flex flex-col md:flex-row justify-between items-center">
+      <div class="absolute top-4 md:top-8 inset-x-0">
+        <h1 class="text-3xl md:text-4xl font-bold">About Me</h1>
+      </div>
+      <div class="container w-full md:w-3/5">
+        <div class="flex w-full mb-4 justify-between items-center">
+          <!-- Text Area -->
+          <div class="flex-col w-full border-b-2 pb-4">
+            <div class="container w-full mt-16">
+              <h3 class="text-xl md:text-2xl text-pColor font-bold mx-auto">Skills</h3>
+            </div>
+            <div class="w-full flex items-center justify-evenly mt-2"> 
+              <h4 class="font-bold text-md md:text-xl text-pColor hover:text-redlight">HTML5</h4>
+              <div class="flex flex-col items-center justify-center">
+                <h4 class="font-bold text-md md:text-xl text-pColor hover:text-css">CSS3</h4>
+                <h4 class="font-bold text-md md:text-xl text-pColor hover:text-tailwind">Tailwind CSS</h4>
+                <h4 class="font-bold text-md md:text-xl text-pColor hover:text-bootstrap">Bootsrtap5</h4>
+              </div>
+              <h4 class="font-bold text-md md:text-xl text-pColor hover:text-yellow">Javascript</h4>
+            </div>
+          </div>
+        </div>
+        <h3 class="text-md md:text-2xl text-pColor hover:text-slate-900">
+          I enjoy helping others solve their technical problems.
+           I am confident in my ability to contribute
+          to the success of your team. In my free time, I often
+          take on new projects to develop my skills that can
+          add to my portfolio as well as practice my skills and
+          gain in-depth knowledge about the technology I'm
+          using. I am enthusiastic about using technology to
+          create innovative solutions.
+        </h3>
+      </div>
+      
+      <div class="container w-4/6 flex flex-col items-center justify-between">
+        <div class="container w-4/6 rounded-xl bg-pColor">
+          <img src="img/6.png" alt="John Andrew Registos" class="rounded-xl border-4 object-cover object-center">
+        </div>
+        <a href="#contact" class="mt-4">
+          <button class="w-36 md:w-40 text-sm md:text-xl  p-1 bg-btnColor hover:bg-indigo-400 text-slate-200 rounded-full">Hire Me!</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Works Section -->
+  <section class="container md:h-screen h-auto mx-auto w-full py-6" id="work">
+    <div class="container w-full mx-auto">
+      <h1 class="text-3xl md:text-4xl font-bold">Projects</h1>
+    </div>
+    <div class="container h-5/6 w-screen flex flex-wrap gap-2 items-center justify-center my-6">
+      <div class="container flex flex-col items-center justify-evenly w-72 h-6/12 bg-mainPurple rounded-3xl mx-6 py-2">
+        <div class="w-3/5">
+          <img src="img/first.jpg" alt="" class="object-cover rounded-3xl mt-2">
+        </div>
+        <div class="w-3/5 font-bold flex items-center">
+          <h2 class="mx-auto text-xl text-slate-200">Media Website</h2>
+        </div>
+        <div class="w-3/5 flex justify-evenly mb-2">
+          <img src="img/html.png" alt="" class="w-8 h-8">
+          <img src="img/css.png" alt="" class="w-8 h-8">
+          <img src="img/tailwind.png" alt="" class="w-8 h-8">
+          <img src="img/js.png" alt="" class="w-8 h-8">
+        </div>
+        <div class="w-full flex justify-evenly text-sm">
+          <a href="https://johnandrewregistos.github.io/tailwindcss-project/" target="_blank"><button class="px-2 rounded-3xl bg-btnColor hover:bg-pColor hover:text-slate-900 text-slate-200">Live Preview</button></a>
+          <a href="#">
+            <button class="px-2 rounded-3xl bg-pColor hover:bg-btnColor hover:text-slate-200 text-sm rounded-3xl">View Code</button>
+          </a>
+        </div>
+      </div>
+
+      <!-- Second Img -->
+      <div class="container flex flex-col items-center justify-evenly w-72 h-6/12 bg-yellow rounded-3xl mx-6 py-2">
+        <div class="w-3/5">
+          <img src="img/first_item.jpg" alt="" class="object-cover rounded-3xl mt-2">
+        </div>
+        <div class="w-full font-bold flex items-center">
+          <h2 class="mx-auto text-lg text-slate-900">Online E-Learning Site</h2>
+        </div>
+        <div class="w-3/5 flex justify-evenly mb-2">
+          <img src="img/html.png" alt="" class="w-8 h-8">
+          <img src="img/css.png" alt="" class="w-8 h-8">
+          <img src="img/bootstrap.png" alt="" class="w-8 h-8">
+          <img src="img/js.png" alt="" class="w-8 h-8">
+        </div>
+        <div class="w-full flex justify-evenly text-sm">
+          <a href="https://johnandrewregistos.github.io/feb21/" target="_blank"><button class="px-2 rounded-3xl bg-btnColor hover:bg-pColor hover:text-slate-900 text-slate-200">Live Preview</button></a>
+          <a href="#">
+            <button class="px-2 rounded-3xl bg-pColor hover:bg-btnColor hover:text-slate-200 text-sm rounded-3xl">View Code</button>
+          </a>
+        </div>
+      </div>
+
+      <!-- Third Img -->
+      <div class="container flex flex-col items-center justify-evenly w-72 h-6/12 bg-redlight rounded-3xl mx-6 py-2">
+        <div class="w-3/5">
+          <img src="img/fourth_item.jpg" alt="" class="object-cover rounded-3xl mt-2">
+        </div>
+        <div class="w-full font-bold flex items-center">
+          <h2 class="mx-auto text-lg text-slate-200">Online E-Learning Site</h2>
+        </div>
+        <div class="w-3/5 flex justify-evenly mb-2">
+          <img src="img/html.png" alt="" class="w-8 h-8">
+          <img src="img/css.png" alt="" class="w-8 h-8">
+          <img src="img/bootstrap.png" alt="" class="w-8 h-8">
+          <img src="img/js.png" alt="" class="w-8 h-8">
+        </div>
+        <div class="w-full flex justify-evenly text-sm">
+          <a href="https://johnandrewregistos.github.io/service-website/" target="_blank"><button class="px-2 rounded-3xl bg-btnColor hover:bg-pColor hover:text-slate-900 text-slate-200">Live Preview</button></a>
+          <a href="#">
+            <button class="px-2 rounded-3xl bg-pColor hover:bg-btnColor hover:text-slate-200 text-sm rounded-3xl">View Code</button>
+          </a>
+        </div>
+      </div>
+
+      <!-- Fourth Img -->
+      <div class="container flex flex-col items-center justify-evenly w-72 h-6/12 bg-mainPurple rounded-3xl mx-6 py-2">
+        <div class="w-3/5">
+          <img src="img/third_item.jpg" alt="" class="object-cover rounded-3xl mt-2">
+        </div>
+        <div class="w-full font-bold flex items-center">
+          <h2 class="mx-auto text-lg text-slate-200">Awesome Website</h2>
+        </div>
+        <div class="w-3/5 flex justify-evenly mb-2">
+          <img src="img/html.png" alt="" class="w-8 h-8">
+          <img src="img/css.png" alt="" class="w-8 h-8">
+          <img src="img/tailwind.png" alt="" class="w-8 h-8">
+          <img src="img/js.png" alt="" class="w-8 h-8">
+        </div>
+        <div class="w-full flex justify-evenly text-sm">
+          <a href="https://johnandrewregistos.github.io/freelancer-portfolio/" target="_blank"><button class="px-2 rounded-3xl bg-btnColor hover:bg-pColor hover:text-slate-900 text-slate-200">Live Preview</button></a>
+          <a href="#">
+            <button class="px-2 rounded-3xl bg-pColor hover:bg-btnColor hover:text-slate-200 text-sm rounded-3xl">View Code</button>
+          </a>
+        </div>
+      </div>
+
+      <!-- Fifth Img -->
+      <div class="container flex flex-col items-center justify-evenly w-72 h-6/12 bg-yellow rounded-3xl mx-6 py-2">
+        <div class="w-3/5">
+          <img src="img/1st.jpg" alt="" class="object-cover rounded-3xl mt-2">
+        </div>
+        <div class="w-full font-bold flex items-center">
+          <h2 class="mx-auto text-lg text-slate-900">E-Commerce Store</h2>
+        </div>
+        <div class="w-3/5 flex justify-evenly mb-2">
+          <img src="img/html.png" alt="" class="w-8 h-8">
+          <img src="img/css.png" alt="" class="w-8 h-8">
+          <img src="img/js.png" alt="" class="w-8 h-8">
+        </div>
+        <div class="w-full flex justify-evenly text-sm">
+          <a href="#" target="_blank"><button class="px-2 rounded-3xl bg-btnColor hover:bg-pColor hover:text-slate-900 text-slate-200">Live Preview</button></a>
+          <a href="#">
+            <button class="px-2 rounded-3xl bg-pColor hover:bg-btnColor hover:text-slate-200 text-sm rounded-3xl">View Code</button>
+          </a>
+        </div>
+      </div>
+
+      <!-- Sixth Img -->
+      <div class="container  flex flex-col items-center justify-evenly w-72 h-6/12 bg-redlight rounded-3xl mx-6 py-2">
+        <div class="w-3/5">
+          <img src="img/twelved_item.jpg" alt="" class="object-cover rounded-3xl mt-2">
+        </div>
+        <div class="w-full font-bold flex items-center">
+          <h2 class="mx-auto text-lg text-slate-200">Wedding Webpage</h2>
+        </div>
+        <div class="w-3/5 flex justify-evenly mb-2">
+          <img src="img/html.png" alt="" class="w-8 h-8">
+          <img src="img/css.png" alt="" class="w-8 h-8">
+          <img src="img/js.png" alt="" class="w-8 h-8">
+        </div>
+        <div class="w-full flex justify-evenly text-sm">
+          <a href="#" target="_blank"><button class="px-2 rounded-3xl bg-btnColor hover:bg-pColor hover:text-slate-900 text-slate-200">Live Preview</button></a>
+          <a href="#">
+            <button class="px-2 rounded-3xl bg-pColor hover:bg-btnColor hover:text-slate-200 text-sm rounded-3xl">View Code</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="h-screen w-full bg-mainPurple" id="contact">
+    <div class="container flex flex-col justify-between mx-auto w-full h-screen pt-6">
+      <div class="container w-full mx-auto my-6">
+        <h1 class="text-3xl md:text-4xl font-bold">Let's Work Together</h1>
+      </div>
+      <div class="container w-full flex flex-col-reverse items-center jusitfy-center md:flex-row">
+        <div class="w-full md:w-6/12 h-6/12 flex flex-col items-center justify-center">
+          <h1 class="font-bold text-3xl hidden md:block">Get In Touch</h1>
+          <h1 class="font-bold text-2xl">Let's Talk About Everything!</h1>
+          <h1 class="font-bold text-2xl text-slate-100">Don't like forms? Send me <a href="mailto:registosandrew@gmail.com" class="text-btnColor hover:text-indigo-400">email.</a></h1>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md overflow-hidden max-w-3xl">
+          <div class="md:flex">
+            <div class="p-8">
+              <form class="mt-3" action="#" method="POST">
+                <div>
+                  <label class="block font-medium text-pColor">Name</label>
+                  <input class="rounded-md border-2 border-gray-300 w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-bootstrap" type="text" name="name" placeholder="Name" autocomplete="off" required>
+                </div>
+                <div class="mt-4">
+                  <label class="block font-medium text-pColor">Email</label>
+                  <input class="rounded-md border-2 border-gray-300 w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-bootstrap" type="email" name="email" placeholder="Email Address" autocomplete="off" required>
+                </div>
+                <div class="mt-4">
+                  <label class="block font-medium text-pColor">Message</label>
+                  <textarea class="rounded-md border-2 border-gray-300 w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-bootstrap" rows="4" cols="50" name="message" placeholder="Hello!" autocomplete="off" required></textarea>
+                </div>
+                <div class="mt-6">
+                  <button class="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-btnColor rounded-md hover:bg-indigo-400 focus:outline-none focus:bg-indigo-400">Send</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <div class="container full">
+        <h3 class="flex my-3 justify-center md:justify-end">
+          <ul class="flex gap-5">
+            <li class="ml-6">
+              <a class="text-xs text-slate-100 hover:text-yellow uppercase tracking-normal" href="#home">Home</a>
+            </li>
+            <li class="ml-6">
+              <a class="text-xs text-slate-100 hover:text-yellow uppercase tracking-normal" href="#about">About</a>
+            </li>
+            <li class="ml-6">
+              <a class="text-xs text-slate-100 hover:text-yellow uppercase tracking-normal" href="#work">Works</a>
+            </li>
+          </ul>
+        </h3>
+      </div>
+    </div>
+    
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/dist/boxicons.js" integrity="sha512-kWH92pHUC/rcjpSMu19lT+H6TlZwZCAftg9AuSw+AVYSdEKSlXXB8o6g12mg5f+Pj5xO40A7ju2ot/VdodCthw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js.js"></script>
+</body>
+</html>
