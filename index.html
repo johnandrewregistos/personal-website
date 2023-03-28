@@ -277,7 +277,7 @@
         <div class="bg-white rounded-xl shadow-md overflow-hidden max-w-3xl">
           <div class="md:flex">
             <div class="p-8">
-              <form class="mt-3" action="#" method="POST">
+              <form class="mt-3" action="https://script.google.com/macros/s/AKfycbxNt5AxzCK5QnHZZQnPBAQ_xAvMbWu83Ae7gcniVfjPKbw3Rkw4RpaZ0n7oKojTwSTd/exec" method="POST" data-email="registosandrew@gmail.com">
                 <div>
                   <label class="block font-medium text-pColor">Name</label>
                   <input class="rounded-md border-2 border-gray-300 w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-bootstrap" type="text" name="name" placeholder="Name" autocomplete="off" required>
@@ -289,6 +289,7 @@
                 <div class="mt-4">
                   <label class="block font-medium text-pColor">Message</label>
                   <textarea class="rounded-md border-2 border-gray-300 w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-bootstrap" rows="4" cols="50" name="message" placeholder="Hello!" autocomplete="off" required></textarea>
+                  <span id="msg"></span>
                 </div>
                 <div class="mt-6">
                   <button class="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-btnColor rounded-md hover:bg-indigo-400 focus:outline-none focus:bg-indigo-400">Send</button>
@@ -321,5 +322,136 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/dist/boxicons.js" integrity="sha512-kWH92pHUC/rcjpSMu19lT+H6TlZwZCAftg9AuSw+AVYSdEKSlXXB8o6g12mg5f+Pj5xO40A7ju2ot/VdodCthw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="js.js"></script>
+  <script type="text/javascript">
+    
+// start of email function
+  (function() {
+  function validEmail(email) {
+    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    return re.test(email);
+  }
+
+  function validateHuman(honeypot) {
+    if (honeypot) {
+      console.log("Robot Detected!");
+      return true;
+    } else {
+      console.log("Welcome Human!");
+    }
+  }
+  function getFormData(form) {
+    var elements = form.elements;
+
+    var fields = Object.keys(elements).filter(function(k) {
+          return (elements[k].name !== "honeypot");
+    }).map(function(k) {
+      if(elements[k].name !== undefined) {
+        return elements[k].name;
+      }else if(elements[k].length > 0){
+        return elements[k].item(0).name;
+      }
+    }).filter(function(item, pos, self) {
+      return self.indexOf(item) == pos && item;
+    });
+
+    var formData = {};
+    fields.forEach(function(name){
+      var element = elements[name];
+      formData[name] = element.value;
+      if (element.length) {
+        var data = [];
+        for (var i = 0; i < element.length; i++) {
+          var item = element.item(i);
+          if (item.checked || item.selected) {
+            data.push(item.value);
+          }
+        }
+        formData[name] = data.join(', ');
+      }
+    });
+
+    // add form-specific values into the data
+    formData.formDataNameOrder = JSON.stringify(fields);
+    formData.formGoogleSheetName = form.dataset.sheet || "Sheet1"; // default sheet name
+    formData.formGoogleSendEmail = form.dataset.email || ""; // no email by default
+
+    console.log(formData);
+    return formData;
+  }
+
+  function handleFormSubmit(event) {  
+    event.preventDefault();           
+    var form = event.target;
+    var data = getFormData(form);         
+    if( data.email && !validEmail(data.email) ) {   
+      var invalidEmail = form.querySelector(".email-invalid");
+      if (invalidEmail) {
+        invalidEmail.style.display = "block";
+        return false;
+      }
+    } else {
+      disableAllButtons(form);
+      var url = form.action;
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', url);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function() {
+          console.log(xhr.status, xhr.statusText);
+          console.log(xhr.responseText);
+          var formElements = form.querySelector(".form-elements")
+          if (formElements) {
+            formElements.style.display = "none"; // hide form
+          }
+          var thankYouMessage = form.querySelector(".thankyou_message");
+          if (thankYouMessage) {
+            thankYouMessage.style.display = "block";
+          }
+          return;
+      };
+      var encoded = Object.keys(data).map(function(k) {
+          return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+      }).join('&');
+      xhr.send(encoded);
+    }
+  }
+
+
+  
+  function loaded() {
+    console.log("Contact form submission handler loaded successfully.");
+    var forms = document.querySelectorAll("form.gform");
+    for (var i = 0; i < forms.length; i++) {
+      forms[i].addEventListener("submit", handleFormSubmit, false);
+    }
+  };
+  document.addEventListener("DOMContentLoaded", loaded, false);
+
+  function disableAllButtons(form) {
+    var buttons = form.querySelectorAll("button");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].disabled = true;
+    }
+  }
+})();
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxNt5AxzCK5QnHZZQnPBAQ_xAvMbWu83Ae7gcniVfjPKbw3Rkw4RpaZ0n7oKojTwSTd/exec'
+        const form = document.forms['submit-to-google-sheet']
+	    const msg = document.getElementById("msg")
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+				msg.innerHTML = "Message sent successfully!"
+				setTimeout(function(){
+					msg.innerHTML = ""
+				},5000)
+				form.reset()
+			    })
+            .catch(error => console.error('Error!', error.message))
+        });
+//     End of email function
+  </script>
+  
 </body>
 </html>
